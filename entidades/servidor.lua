@@ -420,7 +420,7 @@ function servidor:lista_comandos()
   end)
 
   cmd:on("STATUS", function()
-    print(self.estado_partida.current)
+    print("[SERVER] : " .. self.estado_partida.current)
   end)
 
   cmd:on(function(name) print(name .. "comando desconocido") end) 
