@@ -12,6 +12,7 @@ end
 
 function comandos:enter()
 	cmd.load()
+	print("[SERVER] : Eclipso server version " .. version_juego )
 	print("[SERVER] : Escriba comando a elegir")
 end
 
