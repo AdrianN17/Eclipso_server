@@ -1,5 +1,9 @@
 # Eclipso_server
 
+Server of eclipso server
+
+Tested in ubuntu with vps
+
 ![alt text](https://img.shields.io/badge/Love-11.2-ff69b4.svg) ![alt text](https://img.shields.io/badge/Status-Beta%201.0-orange.svg)
 
 ## Comands lines:
