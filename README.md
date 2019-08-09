@@ -6,11 +6,11 @@ Server of eclipso multiplayer game, only comands (No gui)
 
 ## Test
 
-- Tested in ubuntu with vps
+- Tested in Ubuntu with vps
 
-- Tested in trisquel with virtualbox
+- Tested in Trisquel with virtualbox
 
-- Tested in windows 10 with lovec.exe
+- Tested in Windows 10 with lovec.exe
 
 ## Comands lines:
 
