@@ -202,7 +202,9 @@ end
 
 function servidor:update(dt)
 
-  dt = math.min (dt, 1/30)
+  --dt = math.min (dt, 1/30)
+
+  --print(dt)
 
 	self.tick = self.tick + dt
 
@@ -226,7 +228,6 @@ function servidor:update(dt)
         if self.tiempo_partida_inicial>self.tiempo_partida or self:contabilizar_jugadores() <= 1 then
 
             self:ver_jugadores_ultimos_vivos()
-            print("jugadores ganadores .." ,#self.jugadores_ganadores)
             self.server:sendToAll("partida_finalizada",self.jugadores_ganadores)
             self.estado_partida:finalizando()
             

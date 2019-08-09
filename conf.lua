@@ -16,20 +16,14 @@ function love.conf(t)
     t.modules.system = true             -- Enable the system module (boolean)
     t.modules.thread = true            -- Enable the thread module (boolean)
 
-  	t.window.vsync = 0 
+  	t.window.vsync = 1
     t.modules.audio = false              -- Enable the audio module (boolean)
-               
-    
     t.modules.font = false               -- Enable the font module (boolean)
     t.modules.graphics = false           -- Enable the graphics module (boolean)
     t.modules.image = false              -- Enable the image module (boolean)
     t.modules.joystick = false          -- Enable the joystick module (boolean)
     t.modules.keyboard = false           -- Enable the keyboard module (boolean)
-    
-    
     t.modules.sound = false              -- Enable the sound module (boolean)
-    
-    
     t.modules.video = false             -- Enable the video module (boolean)
     t.modules.window = false             -- Enable the window module (boolean)
     t.modules.touch = false             -- Enable the touch module (boolean)
