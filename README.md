@@ -5,31 +5,31 @@ Comands lines:
 
 * No game : 
 
-create
-arguments map time lifes max_players max_enemies
+  * create
+    *arguments map time lifes max_players max_enemies
 
-createc
-arguments maps
+  * createc
+    * arguments maps
 
-ping
+  * ping
 
-VER
+  * VER
 
-BYE
+  * BYE
 
-help
+  * help
 
-When your create game
+* When your create game
 
-ping
+  * ping
 
-INIT_GAME
+  * INIT_GAME
 
-END_GAME
+  * END_GAME
 
-BYE
+  * BYE
 
-STATUS
+  * STATUS
 
-help
+  * help
 
