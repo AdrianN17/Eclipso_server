@@ -3,7 +3,7 @@ Comandos = require "comandos"
 
 
 function love.load()
-	_G.ip_direccion = "192.168.0.3"
+	_G.ip_direccion = "*"
 	_G.lm=love.math
 	_G.lm.setRandomSeed(love.timer.getTime())
 	--_G.font = font

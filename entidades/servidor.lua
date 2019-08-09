@@ -27,7 +27,11 @@ end
 
 function servidor:enter(gamestate,max_jugadores,max_enemigos,mapas,ip_direccion,tiempo,revivir)
 
+  self.targetTime=0
+  self.timestep = 1/60
+
   cmd.load()
+  print("[SERVER] : Servidor creado correctamente")
 
   self.tiempo_partida=tiempo*60
   self.tiempo_partida_inicial=0
@@ -201,16 +205,12 @@ function servidor:enter(gamestate,max_jugadores,max_enemigos,mapas,ip_direccion,
 end
 
 function servidor:update(dt)
-
+  self.targetTime = love.timer.getTime() + self.timestep
   --dt = math.min (dt, 1/30)
 
   --print(dt)
 
 	self.tick = self.tick + dt
-
-  cmd.update()
-
-  self:lista_comandos()
 
 	if self.tick >= self.tickRate then
 		self.tick = 0
@@ -237,6 +237,13 @@ function servidor:update(dt)
         self:envio_masivo_validaciones() 
     end
   end
+
+  cmd.update()
+
+  self:lista_comandos()
+
+  love.timer.sleep(self.targetTime - love.timer.getTime())
+  self.targetTime = love.timer.getTime() + self.timestep
 
 end
 
@@ -390,7 +397,7 @@ end
 
 function servidor:lista_comandos()
   cmd:on("ping", function()
-    print("pong server")
+    print("[SERVER] : pong server")
   end)
 
   cmd:on("INIT_GAME", function()
@@ -399,7 +406,7 @@ function servidor:lista_comandos()
       self.server:sendToAll("iniciar_juego",true)
       self.server:sendToAll("chat_total","Iniciando partida")
     else
-      print("Players insuficientes. Min 2")
+      print("[SERVER] : Players insuficientes. Min 2")
     end
   end)
 
@@ -408,6 +415,7 @@ function servidor:lista_comandos()
   end)
 
   cmd:on("BYE", function()
+    print("[SERVER] : Servidor finalizado")
     love.event.quit()
   end)
 
@@ -418,11 +426,11 @@ function servidor:lista_comandos()
   cmd:on(function(name) print(name .. "comando desconocido") end) 
 
   cmd:on("help",function()
-      print("ping : saber conexion del servidor")
-      print("INIT_GAME : iniciar juego")
-      print("END_GAME : finalizar juego")
-      print("STATUS : estado de partida")
-      print("BYE : salir de la consola")
+      print("\t ping : saber conexion del servidor")
+      print("\t INIT_GAME : iniciar juego")
+      print("\t END_GAME : finalizar juego")
+      print("\t STATUS : estado de partida")
+      print("\t BYE : salir de la consola")
     end)
 end
 
