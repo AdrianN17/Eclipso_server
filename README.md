@@ -1,6 +1,6 @@
 # Eclipso_server
 
-Server of eclipso server
+Server of eclipso multiplayer game, only comands (No gui)
 
 Tested in ubuntu with vps
 
