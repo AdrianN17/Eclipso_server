@@ -329,8 +329,6 @@ function entidad_servidor:remove_player(obj)
             end
           end)
       end
-
-
       return id
     end
   end
