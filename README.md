@@ -55,3 +55,13 @@ Tested in ubuntu with vps
   * help
     * descripcion : get version of server
     * return : list with comands
+    
+ ## Libraries used in this game :
+
+* [Hump](https://github.com/vrld/hump)
+* [Sock](https://github.com/camchenry/sock.lua)
+* [Bitser](https://github.com/gvx/bitser)
+* [Polygon](https://github.com/AlexarJING/polygon)
+* [JSON](http://regex.info/blog/lua/json)
+* [Lua State Machine](https://github.com/kyleconroy/lua-state-machine)
+* [LoveCMD](https://github.com/Ulydev/lovecmd)
