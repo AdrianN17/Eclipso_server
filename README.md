@@ -2,9 +2,11 @@
 
 Server of eclipso multiplayer game, only comands (No gui)
 
-Tested in ubuntu with vps
-Tested in trisquel with virtualbox
-Tested in windows 10 with lovec.exe
+- Tested in ubuntu with vps
+
+- Tested in trisquel with virtualbox
+
+- Tested in windows 10 with lovec.exe
 
 ![alt text](https://img.shields.io/badge/Love-11.2-ff69b4.svg) ![alt text](https://img.shields.io/badge/Status-Beta%201.0-orange.svg)
 
