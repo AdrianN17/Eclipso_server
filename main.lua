@@ -3,6 +3,8 @@ Comandos = require "comandos"
 
 
 function love.load()
+
+	_G.version_juego = "Beta 1.0.3"
 	_G.ip_direccion = "*"
 	_G.lm=love.math
 	_G.lm.setRandomSeed(love.timer.getTime())

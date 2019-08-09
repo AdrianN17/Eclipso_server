@@ -50,8 +50,11 @@ function comandos:update(dt)
 	end)
 
 	cmd:on("ping", function()
-
 		print("[SERVER] : pong")
+	end)
+
+	cmd:on("VER", function()
+		print("[SERVER] : " .. version_juego)
 	end)
 
 	cmd:on("BYE", function()
@@ -66,6 +69,7 @@ function comandos:update(dt)
   		print("\t create [map tiempo revivir max_players max_enemies] : creacion de servidor")
   		print("\t createc [map] : creacion predeterminada de servidor")
   		print("\t BYE : salir de la consola")
+  		print("\t VER : version del servidor")
   	end)
 
 end
