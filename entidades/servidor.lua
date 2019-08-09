@@ -30,6 +30,8 @@ function servidor:enter(gamestate,max_jugadores,max_enemigos,mapas,ip_direccion,
   self.targetTime=0
   self.timestep = 1/60
 
+  self.targetTime = love.timer.getTime() + self.timestep
+
   cmd.load()
   print("[SERVER] : Servidor creado correctamente")
 
@@ -205,8 +207,10 @@ function servidor:enter(gamestate,max_jugadores,max_enemigos,mapas,ip_direccion,
 end
 
 function servidor:update(dt)
-  self.targetTime = love.timer.getTime() + self.timestep
+ 
+  dt = self.timestep
   --dt = math.min (dt, 1/30)
+
 
   --print(dt)
 
