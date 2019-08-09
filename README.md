@@ -1,7 +1,8 @@
 # Eclipso_server
 
+![alt text](https://img.shields.io/badge/Love-11.2-ff69b4.svg) ![alt text](https://img.shields.io/badge/Status-Beta%201.0-orange.svg)
 
-Comands lines:
+## Comands lines:
 
 * No game : 
 
