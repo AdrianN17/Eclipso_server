@@ -231,6 +231,8 @@ function servidor:update(dt)
             self.server:sendToAll("partida_finalizada",self.jugadores_ganadores)
             self.estado_partida:finalizando()
             
+            print("[SERVER] : Juego Finalizado ")
+            
           self.tiempo_partida_inicial=0
         end
 
