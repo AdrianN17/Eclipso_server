@@ -19,19 +19,20 @@ end
 function comandos:update(dt)
 	cmd.update()
 
-	cmd:on("create", function(map,tiempo,revivir,max_players,max_enemies)--map,tiempo,revivir,max_players,max_enemies)
+	cmd:on("create", function(map,tiempo,revivir,max_players,max_enemies,port)
 		local ok  = pcall(function() require ("entidades.mapas." .. map) end)
 
 		if ok then
 			local tiempo_n,revivir_n,max_players_n,max_enemies_n = tonumber(tiempo),tonumber(revivir), tonumber(max_players), tonumber(max_enemies)
+			local port_n = tonumber(port)
 
-			if not tiempo_n  and not revivir_n and not max_players_n and not max_enemies_n then
+			if not tiempo_n  and not revivir_n and not max_players_n and not max_enemies_n and not port_n then
 				print("[SERVER] : Numeros no validos")
 			else
 				if max_players_n<9 and max_players_n>=1 and max_enemies_n<51 and max_enemies_n>=0 and tiempo_n<20 and tiempo_n>=5 and revivir_n<10 and revivir_n>=0 then
 					print("[SERVER] : Creando servidor....")
 
-					Gamestate.switch(Servidor,max_players_n,max_enemies_n,map,ip_direccion,tiempo_n,revivir_n)
+					Gamestate.switch(Servidor,max_players_n,max_enemies_n,map,ip_direccion,tiempo_n,revivir_n, port_n)
 				else
 					print("[SERVER] : Cantidad no validas")
 				end
@@ -67,7 +68,7 @@ function comandos:update(dt)
 
   	cmd:on("help",function()
   		print("\t ping : saber conexion del servidor")
-  		print("\t create [map tiempo revivir max_players max_enemies] : creacion de servidor")
+  		print("\t create [map tiempo revivir max_players max_enemies port(optional) ] : creacion de servidor")
   		print("\t createc [map] : creacion predeterminada de servidor")
   		print("\t BYE : salir de la consola")
   		print("\t VER : version del servidor")

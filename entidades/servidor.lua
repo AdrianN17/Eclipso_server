@@ -6,12 +6,7 @@ local machine = require "libs.statemachine.statemachine"
 local extra = require "entidades.funciones.extra"
 local entidad_servidor = require "entidades.entidad_servidor"
 
-local personajes = {}
-
-personajes.aegis = require "entidades.personajes.aegis"
-personajes.solange = require "entidades.personajes.solange"
-personajes.xeon = require "entidades.personajes.xeon"
-personajes.radian = require "entidades.personajes.radian"
+local personajes = require "entidades.personajes.lista_personajes"
 
 local timer = require "libs.hump.timer"
 
@@ -25,7 +20,7 @@ function servidor:init()
 	
 end
 
-function servidor:enter(gamestate,max_jugadores,max_enemigos,mapas,ip_direccion,tiempo,revivir)
+function servidor:enter(gamestate,max_jugadores,max_enemigos,mapas,ip_direccion,tiempo,revivir,port)
 
   self.targetTime=0
   self.timestep = 1/60
@@ -70,7 +65,7 @@ function servidor:enter(gamestate,max_jugadores,max_enemigos,mapas,ip_direccion,
 	self.tickRate = 1/60
 	self.tick = 0
 
-	self.server = Sock.newServer(ip_direccion,22122,max_jugadores)
+	self.server = Sock.newServer(ip_direccion,port or 22122,max_jugadores)
 	self.server:setSerialization(bitser.dumps, bitser.loads)
 
 	self.server:enableCompression()
