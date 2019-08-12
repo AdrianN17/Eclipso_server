@@ -4,7 +4,7 @@ Comandos = require "comandos"
 
 function love.load()
 
-	_G.version_juego = "Beta 1.0.5"
+	_G.version_juego = "Beta 1.0.6"
 	_G.ip_direccion = "*"
 	_G.lm=love.math
 	_G.lm.setRandomSeed(love.timer.getTime())
